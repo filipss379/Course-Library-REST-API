@@ -1,5 +1,5 @@
-using CourseLibrary.API.DbContexts;
-using CourseLibrary.API.Services;
+using RESTful_API_VS2019.DbContexts;
+using RESTful_API_VS2019.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace CourseLibrary.API
+namespace RESTful_API_VS2019.API
 {
     public class Startup
     {
@@ -22,7 +22,11 @@ namespace CourseLibrary.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           services.AddControllers();
+           services.AddControllers(setupAction =>
+           {
+               setupAction.ReturnHttpNotAcceptable = true;
+
+           }).AddXmlDataContractSerializerFormatters();
              
             services.AddScoped<ICourseLibraryRepository, CourseLibraryRepository>();
 
