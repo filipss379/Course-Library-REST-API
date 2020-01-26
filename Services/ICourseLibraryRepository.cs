@@ -1,8 +1,8 @@
-﻿using RESTful_API_VS2019.API.Entities;
+﻿using RESTful_API.API.Entities;
 using System;
 using System.Collections.Generic;
 
-namespace RESTful_API_VS2019.API.Services
+namespace RESTful_API.API.Services
 {
     public interface ICourseLibraryRepository
     {    

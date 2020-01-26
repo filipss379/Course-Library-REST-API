@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RESTful_API_VS2019.API.Entities
+namespace RESTful_API.API.Entities
 {
     public class Course
     {

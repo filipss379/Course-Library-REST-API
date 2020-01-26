@@ -32,6 +32,8 @@ D:\Programowanie\MyWebsite\Kurs plural sight\RESTful API VS2019\RESTful API VS20
 D:\Programowanie\MyWebsite\Kurs plural sight\RESTful API VS2019\RESTful API VS2019\bin\Debug\netcoreapp3.0\RESTful API VS2019.dll
 D:\Programowanie\MyWebsite\Kurs plural sight\RESTful API VS2019\RESTful API VS2019\bin\Debug\netcoreapp3.0\RESTful API VS2019.pdb
 D:\Programowanie\MyWebsite\Kurs plural sight\RESTful API VS2019\RESTful API VS2019\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
-D:\Programowanie\MyWebsite\Kurs plural sight\RESTful API VS2019\RESTful API VS2019\obj\Debug\netcoreapp3.0\RESTful API VS2019.MvcApplicationPartsAssemblyInfo.cache
 D:\Programowanie\MyWebsite\Kurs plural sight\RESTful API VS2019\RESTful API VS2019\obj\Debug\netcoreapp3.0\RESTful API VS2019.dll
 D:\Programowanie\MyWebsite\Kurs plural sight\RESTful API VS2019\RESTful API VS2019\obj\Debug\netcoreapp3.0\RESTful API VS2019.pdb
+D:\Programowanie\MyWebsite\Kurs plural sight\RESTful API VS2019\RESTful API VS2019\bin\Debug\netcoreapp3.0\AutoMapper.dll
+D:\Programowanie\MyWebsite\Kurs plural sight\RESTful API VS2019\RESTful API VS2019\bin\Debug\netcoreapp3.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Programowanie\MyWebsite\Kurs plural sight\RESTful API VS2019\RESTful API VS2019\obj\Debug\netcoreapp3.0\RESTful API VS2019.MvcApplicationPartsAssemblyInfo.cache

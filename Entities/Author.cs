@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace RESTful_API_VS2019.API.Entities
+namespace RESTful_API.API.Entities
 {
     public class Author
     {
