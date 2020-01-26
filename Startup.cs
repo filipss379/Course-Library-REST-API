@@ -55,6 +55,17 @@ namespace RESTful_API.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            } 
+            else
+            {
+                app.UseExceptionHandler(appBuilder =>
+                {
+                    appBuilder.Run(async context =>
+                    {
+                        context.Response.StatusCode = 500;
+                        await context.Response.WriteAsync("An unexpected fault happened. Try again later.");
+                    });
+                });
             }
 
             app.UseRouting();
@@ -63,10 +74,6 @@ namespace RESTful_API.API
 
             app.UseAuthorization();
 
-            //app.UseCors(
-            //    options => options.WithOrigins("http://localhost:4200/").AllowAnyMethod()
-            //    );
-            //app.UseMvc();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
