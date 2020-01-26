@@ -22,7 +22,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v3.0": {
-      "RESTful API VS2019/1.0.0": {
+      "RESTful API/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "7.0.0",
           "Microsoft.AspNetCore.Cors": "2.2.0",
@@ -313,10 +313,10 @@
           "WindowsBase": "4.0.0.0"
         },
         "runtime": {
-          "RESTful API VS2019.dll": {}
+          "RESTful API.dll": {}
         },
         "compile": {
-          "RESTful API VS2019.dll": {}
+          "RESTful API.dll": {}
         }
       },
       "AutoMapper/9.0.0": {
@@ -2851,7 +2851,7 @@
     }
   },
   "libraries": {
-    "RESTful API VS2019/1.0.0": {
+    "RESTful API/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

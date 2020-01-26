@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace RESTful_API_VS2019.Migrations
+namespace RESTful_API.Migrations
 {
     public partial class InitialMigration : Migration
     {

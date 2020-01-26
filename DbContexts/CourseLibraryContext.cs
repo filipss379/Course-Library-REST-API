@@ -1,8 +1,8 @@
-﻿using RESTful_API_VS2019.API.Entities;
+﻿using RESTful_API.API.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace RESTful_API_VS2019.DbContexts
+namespace RESTful_API.DbContexts
 {
     public class CourseLibraryContext : DbContext
     {

@@ -1,11 +1,12 @@
-﻿using RESTful_API_VS2019.DbContexts;
-using RESTful_API_VS2019.API.Entities; 
+﻿using RESTful_API.DbContexts;
+using RESTful_API.API.Entities; 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace RESTful_API_VS2019.API.Services
+namespace RESTful_API.API.Services
 {
+    
     public class CourseLibraryRepository : ICourseLibraryRepository, IDisposable
     {
         private readonly CourseLibraryContext _context;

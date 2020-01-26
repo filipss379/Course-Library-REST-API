@@ -1,4 +1,4 @@
-using RESTful_API_VS2019.DbContexts;
+using RESTful_API.DbContexts;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 
-namespace RESTful_API_VS2019.API
+namespace RESTful_API.API
 {
     public class Program
     {
