@@ -36,3 +36,4 @@ D:\Programowanie\MyWebsite\Kurs plural sight\RESTful API VS2019\RESTful API VS20
 D:\Programowanie\MyWebsite\Kurs plural sight\RESTful API VS2019\RESTful API VS2019\obj\Debug\netcoreapp3.0\RESTful API.csproj.CopyComplete
 D:\Programowanie\MyWebsite\Kurs plural sight\RESTful API VS2019\RESTful API VS2019\obj\Debug\netcoreapp3.0\RESTful API.dll
 D:\Programowanie\MyWebsite\Kurs plural sight\RESTful API VS2019\RESTful API VS2019\obj\Debug\netcoreapp3.0\RESTful API.pdb
+D:\Programowanie\MyWebsite\Kurs plural sight\RESTful API VS2019\RESTful API VS2019\obj\Debug\netcoreapp3.0\RESTful API.csprojAssemblyReference.cache
