@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace RESTful_API.API.Services
 {
     public interface ICourseLibraryRepository
-    {    
+    {
         IEnumerable<Course> GetCourses(Guid authorId);
         Course GetCourse(Guid authorId, Guid courseId);
         void AddCourse(Guid authorId, Course course);
