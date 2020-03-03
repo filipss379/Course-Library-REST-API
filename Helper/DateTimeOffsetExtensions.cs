@@ -13,9 +13,8 @@ namespace RESTful_API.Helper
             int age = currentDate.Year - dateTimeOffset.Year;
 
             if(currentDate < dateTimeOffset.AddYears(age))
-            {
                 age--;
-            }
+           
             return age;
         }
     }
