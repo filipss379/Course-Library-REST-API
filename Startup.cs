@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using AutoMapper;
 using System;
+using Microsoft.AspNetCore.Mvc;
 
 namespace RESTful_API.API
 {
@@ -25,7 +26,31 @@ namespace RESTful_API.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           services.AddControllers();
+           services.AddControllers(setupAction =>
+           {
+               setupAction.ReturnHttpNotAcceptable = true;
+           }).AddXmlDataContractSerializerFormatters()
+           .ConfigureApiBehaviorOptions(setupAction =>
+           {
+               setupAction.InvalidModelStateResponseFactory = context =>
+               {
+                   var problemDetails = new ValidationProblemDetails(context.ModelState)
+                   {
+                       Type = "https://courselibrary.com/modelvalidationproblem",
+                       Title = "One or more model validation errors occured",
+                       Status = StatusCodes.Status422UnprocessableEntity,
+                       Detail = "See the errors property for details",
+                       Instance = context.HttpContext.Request.Path
+                   };
+
+                   problemDetails.Extensions.Add("traceId", context.HttpContext.TraceIdentifier);
+
+                   return new UnprocessableEntityObjectResult(problemDetails)
+                   {
+                       ContentTypes = { "application/problem+json" }
+                   };
+               };
+           });
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
