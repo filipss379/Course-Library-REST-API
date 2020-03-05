@@ -33,13 +33,13 @@ namespace RESTful_API.Controllers
             return Ok(_mapper.Map<IEnumerable<CourseDto>>(coursesForAuthorFromRepo));
         }
 
-        [HttpGet("{courseId}", Name="GetCourseForAuthor")]
+        [HttpGet("{courseId}", Name = "GetCourseForAuthor")]
         public ActionResult<IEnumerable<CourseDto>> GetCourseForAuthor(Guid authorId, Guid courseId)
         {
             if (!_courseLibraryRepository.AuthorExists(authorId))
                 return NotFound();
             var courseForAuthorFromRepo = _courseLibraryRepository.GetCourse(authorId, courseId);
-            if(courseForAuthorFromRepo == null)
+            if (courseForAuthorFromRepo == null)
                 return NotFound();
             return Ok(_mapper.Map<CourseDto>(courseForAuthorFromRepo));
         }
@@ -65,5 +65,42 @@ namespace RESTful_API.Controllers
                 },
                       courseToReturn);
         }
+
+        [HttpPut("{courseId}")]
+        public IActionResult UpdateCourseForAuthor(
+            Guid authorId,
+            Guid courseId,
+            CourseForUpdateDto course)
+        {
+            if (!_courseLibraryRepository.AuthorExists(authorId))
+                return NotFound();
+
+            var courseForAuthorFromRepo = _courseLibraryRepository.GetCourse(authorId, courseId);
+
+            if (courseForAuthorFromRepo == null) 
+            {
+                var courseToAdd = _mapper.Map<API.Entities.Course>(course);
+                courseToAdd.Id = courseId;
+
+                _courseLibraryRepository.AddCourse(authorId, courseToAdd);
+
+                _courseLibraryRepository.Save();
+
+                var courseToReturn = _mapper.Map<CourseDto>(courseToAdd);
+
+                return CreatedAtRoute("GetCourseForAuthor",
+                    new { authorId, courseId = courseToAdd.Id },
+                    courseToReturn);
+            }
+
+            _mapper.Map(course, courseForAuthorFromRepo);
+
+            _courseLibraryRepository.UpdateCourse(courseForAuthorFromRepo);
+
+            _courseLibraryRepository.Save();
+
+            return NoContent();
+        }
+
     }
 }
