@@ -12,6 +12,7 @@ namespace RESTful_API.Profiles
         {
             CreateMap<API.Entities.Course, Models.CourseDto>();
             CreateMap<Models.CourseForCreationDto, API.Entities.Course>();
+            CreateMap<Models.CourseForUpdateDto, API.Entities.Course>();
         }
     }
 }
