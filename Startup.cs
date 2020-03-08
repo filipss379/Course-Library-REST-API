@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using AutoMapper;
 using System;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Serialization;
 
 namespace RESTful_API.API
 {
@@ -29,7 +30,12 @@ namespace RESTful_API.API
            services.AddControllers(setupAction =>
            {
                setupAction.ReturnHttpNotAcceptable = true;
-           }).AddXmlDataContractSerializerFormatters()
+           }).AddNewtonsoftJson(setupAction =>
+           {
+               setupAction.SerializerSettings.ContractResolver =
+                  new CamelCasePropertyNamesContractResolver();
+           })
+           .AddXmlDataContractSerializerFormatters()
            .ConfigureApiBehaviorOptions(setupAction =>
            {
                setupAction.InvalidModelStateResponseFactory = context =>
