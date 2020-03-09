@@ -1,4 +1,5 @@
 ﻿using RESTful_API.API.Entities;
+using RESTful_API.Helpers;
 using RESTful_API.ResourceParameters;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace RESTful_API.API.Services
         void UpdateCourse(Course course);
         void DeleteCourse(Course course);
         IEnumerable<Author> GetAuthors();
-        IEnumerable<Author> GetAuthors(AuthorsResourceParameters authorsResourceParameters);
+        PagedList<Author> GetAuthors(AuthorsResourceParameters authorsResourceParameters);
         Author GetAuthor(Guid authorId);
         IEnumerable<Author> GetAuthors(IEnumerable<Guid> authorIds);
         void AddAuthor(Author author);
