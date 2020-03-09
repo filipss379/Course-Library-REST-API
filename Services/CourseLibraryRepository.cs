@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using RESTful_API.ResourceParameters;
+using RESTful_API.Helpers;
 
 namespace RESTful_API.API.Services
 {
@@ -17,7 +18,9 @@ namespace RESTful_API.API.Services
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public void AddCourse(Guid authorId, Course course)
+        public void AddCourse(
+            Guid authorId, 
+            Course course)
         {
             if (authorId == Guid.Empty)
             {
@@ -38,7 +41,9 @@ namespace RESTful_API.API.Services
             _context.Courses.Remove(course);
         }
   
-        public Course GetCourse(Guid authorId, Guid courseId)
+        public Course GetCourse(
+            Guid authorId, 
+            Guid courseId)
         {
             if (authorId == Guid.Empty)
             {
@@ -124,17 +129,12 @@ namespace RESTful_API.API.Services
             return _context.Authors.ToList<Author>();
         }
 
-        public IEnumerable<Author> GetAuthors(
+        public PagedList<Author> GetAuthors(
             AuthorsResourceParameters authorsResourceParameters)
         {
             if(authorsResourceParameters == null)
             {
                 throw new ArgumentNullException(nameof(authorsResourceParameters));
-            }
-            if (string.IsNullOrWhiteSpace(authorsResourceParameters.MainCategory)
-                && string.IsNullOrWhiteSpace(authorsResourceParameters.SearchQuery))
-            {
-                return GetAuthors();
             }
 
             var collection = _context.Authors as IQueryable<Author>;
@@ -150,7 +150,10 @@ namespace RESTful_API.API.Services
                     || a.FirstName.Contains(searchQuery)
                     || a.LastName.Contains(searchQuery));
             }
-            return collection.ToList();
+            return PagedList<Author>.Create(
+                collection,
+                authorsResourceParameters.PageNumber,
+                authorsResourceParameters.PageSize);
         }
          
         public IEnumerable<Author> GetAuthors(IEnumerable<Guid> authorIds)

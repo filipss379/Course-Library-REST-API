@@ -5288,11 +5288,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programowanie\\MyWebsite\\Kurs plural sight\\RESTful API VS2019\\RESTful API VS2019\\RESTful API.csproj",
+      "projectUniqueName": "D:\\Programowanie\\Kursy PluralSight\\REST\\RESTful API VS2019\\RESTful API VS2019\\RESTful API.csproj",
       "projectName": "RESTful API",
-      "projectPath": "D:\\Programowanie\\MyWebsite\\Kurs plural sight\\RESTful API VS2019\\RESTful API VS2019\\RESTful API.csproj",
+      "projectPath": "D:\\Programowanie\\Kursy PluralSight\\REST\\RESTful API VS2019\\RESTful API VS2019\\RESTful API.csproj",
       "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-      "outputPath": "D:\\Programowanie\\MyWebsite\\Kurs plural sight\\RESTful API VS2019\\RESTful API VS2019\\obj\\",
+      "outputPath": "D:\\Programowanie\\Kursy PluralSight\\REST\\RESTful API VS2019\\RESTful API VS2019\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
