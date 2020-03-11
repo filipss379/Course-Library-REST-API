@@ -62,6 +62,8 @@ namespace RESTful_API.API
             //register PropertyMappingservice
             services.AddTransient<IPropertyMappingService, PropertyMappingService>();
 
+            services.AddTransient<IPropertyCheckerService, PropertyCheckerService>();
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<ICourseLibraryRepository, CourseLibraryRepository>();
