@@ -11,6 +11,7 @@ using AutoMapper;
 using System;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Serialization;
+using RESTful_API.Services;
 
 namespace RESTful_API.API
 {
@@ -57,6 +58,9 @@ namespace RESTful_API.API
                    };
                };
            });
+
+            //register PropertyMappingservice
+            services.AddTransient<IPropertyMappingService, PropertyMappingService>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
