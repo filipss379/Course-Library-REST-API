@@ -163,7 +163,8 @@ namespace RESTful_API.API.Services
                 var authorPropertyMappingDictionary =
                     _propertyMappingService.GetPropertyMapping<Models.AuthorDto, Author>();
                 
-                collection = collection.ApplySort(authorsResourceParameters.OrderBy, 
+                collection = collection.ApplySort(
+                    authorsResourceParameters.OrderBy, 
                     authorPropertyMappingDictionary);
             }
 

@@ -29,7 +29,7 @@ namespace RESTful_API.Controllers
                 throw new ArgumentException(nameof(mapper));
         }
 
-        [HttpGet()]
+        [HttpGet(Name = "GetCoursesForAuthor")]
         public ActionResult<IEnumerable<CourseDto>> GetCoursesFromAuthor(Guid authorId)
         {
             if (!_courseLibraryRepository.AuthorExists(authorId))
@@ -49,7 +49,7 @@ namespace RESTful_API.Controllers
             return Ok(_mapper.Map<CourseDto>(courseForAuthorFromRepo));
         }
 
-        [HttpPost]
+        [HttpPost(Name = "CreateCourseForAuthor")]
         public ActionResult<CourseDto> CreateCourseForAuthor(
             Guid authorId,
             CourseForCreationDto course)
